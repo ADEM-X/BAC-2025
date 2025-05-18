@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العد التنازلي المميز لباكالوريا 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        
+        :root {
+            --primary-color: #6C63FF;
+            --secondary-color: #4D44DB;
+            --accent-color: #FF6584;
+            --text-color: #2D3748;
+            --light-color: #F8FAFC;
+            --dark-color: #1A202C;
+            --success-color: #48BB78;
+            --warning-color: #ED8936;
+            --danger-color: #F56565;
+            --dark-mode-bg: #1a1a2e;
+            --dark-mode-card: #16213e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #2c3e50;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                              url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 15px;
+            position: relative;
+            overflow-x: hidden;
+            transition: background-color 0.3s;
+        }
+        
+        body.dark-mode {
+            background-color: var(--dark-mode-bg);
+            background-image: none;
+            color: #eee;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            will-change: transform, opacity;
+            transition: background 0.3s;
+        }
+        
+        body.dark-mode .container {
+            background: rgba(30, 30, 60, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .desktop-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            z-index: 9999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .desktop-message i {
+            font-size: 3rem;
+            color: var(--danger-color);
+            margin-bottom: 20px;
+        }
+        
+        .desktop-message h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .desktop-message p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .countdown-container {
+            padding: 30px 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .countdown-box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        body.dark-mode .countdown-box {
+            background: var(--dark-mode-card);
+        }
+        
+        .countdown-box::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 5px;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            color: var(--dark-color);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        body.dark-mode .countdown-label {
+            color: #eee;
+        }
+        
+        .exam-date {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            padding: 0 15px 20px;
+            font-weight: 600;
+        }
+        
+        body.dark-mode .exam-date {
+            color: #eee;
+        }
+        
+        .exam-date span {
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding: 0 5px;
+        }
+        
+        .motivation {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            padding: 0 20px;
+            color: var(--dark-color);
+            font-weight: 600;
+            line-height: 1.6;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        body.dark-mode .motivation {
+            color: #eee;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 15px 20px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-3px);
+        }
+        
+        body.dark-mode .feature {
+            background: rgba(30, 30, 60, 0.9);
+            color: #eee;
+        }
+        
+        .feature i {
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+        
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .no-copy-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .result-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px 15px;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .result-section {
+            background: var(--dark-mode-card);
+        }
+        
+        .result-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .result-section p {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        body.dark-mode .result-section p {
+            color: #eee;
+        }
+        
+        .important-note {
+            background: rgba(255, 101, 101, 0.15);
+            border-right: 4px solid var(--danger-color);
+            padding: 15px;
+            margin: 15px;
+            border-radius: 8px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        body.dark-mode .important-note {
+            color: #eee;
+        }
+        
+        .important-note i {
+            color: var(--danger-color);
+            margin-left: 8px;
+        }
+        
+        .how-it-works {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px 15px;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .how-it-works {
+            background: var(--dark-mode-card);
+        }
+        
+        .how-it-works h2 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .how-it-works p {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 500;
+            text-align: right;
+        }
+        
+        body.dark-mode .how-it-works p {
+            color: #eee;
+        }
+        
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            text-align: right;
+        }
+        
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .credits {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        body.dark-mode .credits {
+            color: #eee;
+        }
+        
+        .credits span {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .result-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .result-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(108, 99, 255, 0.4);
+        }
+        
+        .result-btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* أقسام جديدة */
+        .study-plan-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .study-plan-section {
+            background: var(--dark-mode-card);
+        }
+        
+        .study-plan-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .study-plan-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .study-plan-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .study-plan-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body.dark-mode .study-plan-input input {
+            background: #2a2a4a;
+            color: #eee;
+            border: 1px solid #444;
+        }
+        
+        .study-plan-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .study-plan-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        body.dark-mode .study-plan-item {
+            background: rgba(30, 30, 60, 0.7);
+        }
+        
+        .study-plan-item-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .study-plan-item-name {
+            font-weight: 700;
+        }
+        
+        .study-plan-item-hours {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        body.dark-mode .study-plan-item-hours {
+            color: #aaa;
+        }
+        
+        .study-plan-item-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .study-plan-item-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .study-plan-item-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .study-plan-item-btn.delete {
+            background: var(--danger-color);
+        }
+        
+        .study-plan-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        body.dark-mode .study-plan-stats {
+            border-top: 1px dashed #444;
+        }
+        
+        .study-plan-stat {
+            text-align: center;
+        }
+        
+        .study-plan-stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .study-plan-stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        body.dark-mode .study-plan-stat-label {
+            color: #aaa;
+        }
+        
+        .tips-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .tips-section {
+            background: var(--dark-mode-card);
+        }
+        
+        .tips-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .daily-tip {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: right;
+        }
+        
+        body.dark-mode .daily-tip {
+            background: rgba(30, 30, 60, 0.7);
+        }
+        
+        .daily-tip-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .daily-tip-content {
+            font-size: 0.95rem;
+        }
+        
+        .refresh-tip {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 auto;
+        }
+        
+        /* قسم مواضيع البكالوريا الجديد */
+        .bac-subjects-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        body.dark-mode .bac-subjects-section {
+            background: var(--dark-mode-card);
+        }
+        
+        .bac-subjects-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .bac-subjects-section p {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        body.dark-mode .bac-subjects-section p {
+            color: #eee;
+        }
+        
+        .bac-years {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .bac-year-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 8px rgba(108, 99, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .bac-year-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(108, 99, 255, 0.4);
+        }
+        
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark-mode-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .share-btn {
+            position: fixed;
+            bottom: 75px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .share-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .countdown-box {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.9rem;
+            }
+            
+            .motivation {
+                font-size: 1.1rem;
+            }
+            
+            .result-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .how-it-works h2 {
+                font-size: 1.3rem;
+            }
+            
+            .study-plan-section h2,
+            .tips-section h2,
+            .bac-subjects-section h2 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-box {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+            
+            .motivation {
+                font-size: 1rem;
+            }
+            
+            .feature {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .result-section h2 {
+                font-size: 1.2rem;
+            }
+            
+            .how-it-works h2 {
+                font-size: 1.2rem;
+            }
+            
+            .study-plan-section h2,
+            .tips-section h2,
+            .bac-subjects-section h2 {
+                font-size: 1.2rem;
+            }
+            
+            .result-btn,
+            .bac-year-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .study-plan-input {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .study-plan-item {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            
+            .study-plan-item-actions {
+                align-self: flex-end;
+            }
+            
+            .bac-years {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .desktop-message {
+                display: flex;
+            }
+            
+            .container {
+                display: none;
+            }
+            
+            .watermark {
+                display: none;
+            }
+            
+            .dark-mode-toggle,
+            .share-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop-message">
+        <i class="fas fa-mobile-alt"></i>
+        <h2>هذا التطبيق متاح فقط على الهواتف المحمولة</h2>
+        <p>للاستفادة من تطبيق العد التنازلي لبكالوريا 2025، يرجى فتحه على هاتفك المحمول</p>
+        <p>نأسف للإزعاج ونشكركم لزيارتكم</p>
+    </div>
+    
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <button class="share-btn" id="shareBtn">
+        <i class="fas fa-share-alt"></i>
+    </button>
+    
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-graduation-cap"></i> العد التنازلي لباكالوريا 2025</h1>
+            <p class="subtitle">الوقت المتبقي لامتحان البكالوريا - استثمر وقتك جيداً</p>
+        </div>
+        
+        <div class="important-note">
+            <i class="fas fa-exclamation-triangle"></i>
+            ملاحظة مهمة: لا تنسى الإستدعاء وبطاقة التعريف الوطنية يوم الامتحان
+        </div>
+        
+        <p class="motivation">كل لحظة تمر هي فرصة للتعلم والتحسين، استثمر وقتك بحكمة!</p>
+        
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">أيام</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">ساعات</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">دقائق</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">ثواني</div>
+            </div>
+        </div>
+        
+        <p class="exam-date">موعد امتحان البكالوريا: <span>15 جوان 2025</span></p>
+        
+        <!-- قسم مواضيع البكالوريا الجديد -->
+        <div class="bac-subjects-section">
+            <h2><i class="fas fa-file-alt"></i> مواضيع بكالوريا سابقة</h2>
+            <p>يمكنك الاطلاع على مواضيع بكالوريا السنوات السابقة مع التصحيح لجميع الشعب</p>
+            <p>ركز على هذه الواضيع الأخيرة</p>
+            <p>في خاطر علوش وكلاصة 3 تسير وإقتصاد رقم 2</p>
+            <p>الباك ساهل</p>
+
+            <div class="bac-years">
+                <button class="bac-year-btn" onclick="openBacSubjects('2014')">
+                    <i class="fas fa-book"></i> بكالوريا 2022
+                </button>
+                <button class="bac-year-btn" onclick="openBacSubjects('2020')">
+                    <i class="fas fa-book"></i> بكالوريا 2023
+                </button>
+                <button class="bac-year-btn" onclick="openBacSubjects('2024')">
+                    <i class="fas fa-book"></i> بكالوريا 2024
+                </button>
+            </div>
+            
+            <a href="https://www.dzexams.com/ar/bac" class="result-btn" target="_blank">
+                <i class="fas fa-external-link-alt"></i> تصفح جميع المواضيع على dzexams.com
+            </a>
+        </div>
+        
+        <!-- قسم الخطة الدراسية -->
+        <div class="study-plan-section">
+            <h2><i class="fas fa-book-open"></i> خطتي الدراسية</h2>
+            
+            <div class="study-plan-form">
+                <div class="study-plan-input">
+                    <input type="text" id="subjectName" placeholder="اسم المادة">
+                    <input type="number" id="subjectHours" placeholder="عدد الساعات">
+                    <button class="result-btn" id="addSubjectBtn">
+                        <i class="fas fa-plus"></i> إضافة
+                    </button>
+                </div>
+            </div>
+            
+            <div class="study-plan-list" id="studyPlanList">
+                <!-- سيتم إضافة المواد هنا عبر الجافاسكريبت -->
+            </div>
+            
+            <div class="study-plan-stats">
+                <div class="study-plan-stat">
+                    <div class="study-plan-stat-value" id="totalSubjects">0</div>
+                    <div class="study-plan-stat-label">عدد المواد</div>
+                </div>
+                <div class="study-plan-stat">
+                    <div class="study-plan-stat-value" id="totalHours">0</div>
+                    <div class="study-plan-stat-label">إجمالي الساعات</div>
+                </div>
+                <div class="study-plan-stat">
+                    <div class="study-plan-stat-value" id="avgHours">0</div>
+                    <div class="study-plan-stat-label">متوسط الساعات</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- قسم النصائح اليومية -->
+        <div class="tips-section">
+            <h2><i class="fas fa-lightbulb"></i> نصائح دراسية</h2>
+            
+            <div class="daily-tip">
+                <div class="daily-tip-title">
+                    <i class="fas fa-bolt"></i> نصيحة اليوم
+                </div>
+                <div class="daily-tip-content" id="dailyTipContent">
+                    قم بتقسيم وقت الدراسة إلى فترات تركيز لمدة 25-30 دقيقة تليها استراحة قصيرة (تقنية بومودورو).
+                </div>
+            </div>
+            
+            <button class="refresh-tip" id="refreshTipBtn">
+                <i class="fas fa-sync-alt"></i> نصيحة جديدة
+            </button>
+        </div>
+        
+        <div class="result-section">
+            <h2><i class="fas fa-search"></i> الاستعلام عن نتائج البكالوريا</h2>
+            <p>بعد إعلان النتائج، يمكنك الاستعلام عن نتيجتك مباشرة عبر الموقع الرسمي لوزارة التربية الوطنية</p>
+            <a href="https://bac.onec.dz" class="result-btn" target="_blank">
+                <i class="fas fa-external-link-alt"></i> الانتقال إلى موقع النتائج
+            </a>
+        </div>
+        
+        <div class="how-it-works">
+            <h2><i class="fas fa-code"></i> كيف تم بناء هذا التطبيق؟</h2>
+            <p>تم تطوير هذا التطبيق باستخدام تقنيات الويب الحديثة لمساعدة طلاب البكالوريا في تنظيم وقتهم</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>HTML5</strong>: هيكلة الصفحة والعناصر الأساسية
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>CSS3</strong>: التصميم والتنسيقات المرئية
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>JavaScript</strong>: العمليات الحسابية والتفاعل مع المستخدم
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <strong>Responsive Design</strong>: التكيف مع جميع أحجام الشاشات
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <strong>LocalStorage</strong>: حفظ البيانات محلياً على جهاز المستخدم
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature" onclick="showStudyPlan()">
+                <i class="fas fa-book-open"></i>
+                <span>خطط لدراستك</span>
+            </div>
+            <div class="feature" onclick="showTimeManagementTips()">
+                <i class="fas fa-clock"></i>
+                <span>نظم وقتك</span>
+            </div>
+            <div class="feature" onclick="showUnderstandingTips()">
+                <i class="fas fa-brain"></i>
+                <span>ركز على فهمك</span>
+            </div>
+            <div class="feature" onclick="showProgressTips()">
+                <i class="fas fa-chart-line"></i>
+                <span>تتبع تقدمك</span>
+            </div>
+        </div>
+        
+        <div class="credits">
+            <p>كل الشكر والتقدير لفريق العمل المتميز</p>
+            <p><span># ᗩᗪEᗰ |™- Dev</span> | <span># ᖴIGᗰᗩ |™- Dev</span></p>
+        </div>
+    </div>
+    
+    <div class="watermark"></div>
+   
+    <div class="no-copy-message" id="noCopyMessage">النسخ غير مسموح به!</div>
+    
+    <script>
+        // منع النقر الأيمن ومنع النسخ والتحديد
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showNoCopyMessage();
+        });
+        
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            showNoCopyMessage();
+        });
+        
+        function showNoCopyMessage() {
+            const message = document.getElementById('noCopyMessage');
+            message.style.opacity = '1';
+            setTimeout(() => {
+                message.style.opacity = '0';
+            }, 1500);
+        }
+        
+        // تحسين الأداء: تخزين العناصر في متغيرات
+        const daysElement = document.getElementById('days');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+        const motivationElement = document.querySelector('.motivation');
+        
+        // تاريخ امتحان الباكالوريا (15 يونيو 2025)
+        const examDate = new Date('2025-06-15T08:00:00').getTime();
+        
+        // رسائل التحفيز مع التخزين المسبق
+        const motivationMessages = [
+            { threshold: 180, icon: 'calendar-check', text: 'لديك متسع من الوقت، ابدأ بخطة دراسية منتظمة واجعل التركيز على الفهم!' },
+            { threshold: 90, icon: 'hourglass-half', text: 'استمر في التركيز، الوقت يمر سريعًا! راجع ما درسته بانتظام.' },
+            { threshold: 30, icon: 'brain', text: 'أنت في المرحلة الحاسمة، زد من تركيزك وحل الكثير من التمارين!' },
+            { threshold: 7, icon: 'running', text: 'الوقت يداهمنا، استثمر كل دقيقة بحكمة وراجع النقاط الصعبة!' },
+            { threshold: 1, icon: 'fire', text: 'آخر استعداداتك، راجع النقاط الأساسية ولا ترهق نفسك!' },
+            { threshold: 0, icon: 'moon', text: 'غدًا يوم الامتحان، احصل على قسط كافٍ من النوم وكن واثقًا من نفسك!' }
+        ];
+        
+        // نصائح دراسية
+        const studyTips = [
+            "قسم المواد الصعبة إلى أجزاء صغيرة لتسهيل فهمها.",
+            "استخدم الخرائط الذهنية لربط الأفكار والمفاهيم معاً.",
+            "خذ استراحات منتظمة أثناء الدراسة لتحسين التركيز.",
+            "حل نماذج الامتحانات السابقة لفهم نمط الأسئلة.",
+            "راجع دروسك أولاً بأول ولاتؤجل المراجعة.",
+            "استخدم أسلوب التلخيص لتركيز المعلومات المهمة.",
+            "خصص وقتاً كافياً للنوم فهو أساس التركيز.",
+            "مارس الرياضة بانتظام لتحسين الدورة الدموية والتركيز.",
+            "ابتعد عن المشتتات مثل الهاتف أثناء الدراسة.",
+            "استخدم تقنية 'فاينمان' لاختبار فهمك عن طريق شرح المعلومة لشخص آخر.",
+            "ابدأ بالمواد الصعبة عندما يكون ذهنك في أفضل حالاته.",
+            "استخدم الألوان في تدوين الملاحظات لتحسين التذكر.",
+            "ضع أهدافاً يومية واقعية وقابلة للتحقيق.",
+            "كافئ نفسك بعد إنجاز أهداف الدراسة.",
+            "احرص على التغذية الصحية فهي تؤثر مباشرة على قدراتك الذهنية."
+        ];
+
+        // نصائح إضافية للوظائف الجديدة
+        const timeManagementTips = [
+            "استخدم تقنية بومودورو: 25 دقيقة دراسة + 5 دقائق استراحة",
+            "خصص أوقاتاً محددة للمذاكرة وابتعد عن العشوائية",
+            "رتب أولوياتك وابدأ بالمواد الأصعب عندما تكون في قمة تركيزك",
+            "استخدم تطبيقات تتبع الوقت لمعرفة كيف تقضي وقتك"
+        ];
+
+        const understandingTips = [
+            "لا تحفظ دون فهم، حاول أن تفهم المفاهيم الأساسية أولاً",
+            "اشرح الدرس لنفسك أو لزميل لك لاختبار مدى فهمك",
+            "استخدم الخرائط الذهنية لربط الأفكار مع بعضها",
+            "اطرح أسئلة على نفسك أثناء الدراسة لتعميق الفهم"
+        ];
+
+        const progressTips = [
+            "سجل تقدمك اليومي في دفتر خاص",
+            "ضع أهدافاً أسبوعية وقيم مدى تحقيقك لها",
+            "احتفل بالإنجازات الصغيرة لتحفيز نفسك",
+            "راجع ما تعلمته بشكل دوري لتثبيت المعلومات"
+        ];
+        
+        // الخطة الدراسية
+        let studyPlan = JSON.parse(localStorage.getItem('studyPlan')) || [];
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = examDate - now;
+            
+            if (diff <= 0) {
+                daysElement.textContent = '00';
+                hoursElement.textContent = '00';
+                minutesElement.textContent = '00';
+                secondsElement.textContent = '00';
+                motivationElement.innerHTML = '<i class="fas fa-star"></i> لقد حان وقت الامتحان! حظًا موفقًا لجميع الطلاب.';
+                return;
+            }
+            
+            // حساب الوقت المتبقي
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // تحديث القيم
+            daysElement.textContent = days.toString().padStart(2, '0');
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+            
+            // تحديث رسالة التحفيز
+            updateMotivationMessage(days);
+            
+            // تغيير اللون عند اقتراب الموعد
+            if (days < 7) {
+                const countdownValues = document.querySelectorAll('.countdown-value');
+                countdownValues.forEach(el => {
+                    el.style.background = 'linear-gradient(135deg, var(--danger-color), var(--warning-color))';
+                    el.style.webkitBackgroundClip = 'text';
+                });
+            }
+        }
+        
+        function updateMotivationMessage(daysLeft) {
+            let selectedMessage = motivationMessages.find(msg => daysLeft > msg.threshold) || 
+                                 { icon: 'star', text: 'لقد حان وقت الامتحان! حظًا موفقًا لجميع الطلاب.' };
+            
+            motivationElement.innerHTML = `<i class="fas fa-${selectedMessage.icon}"></i> ${selectedMessage.text}`;
+        }
+        
+        // بدء العد التنازلي
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // تأثير بسيط عند التحميل
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.container').style.opacity = '1';
+                document.querySelector('.container').style.transform = 'translateY(0)';
+            }, 50);
+        });
+        
+        // تهيئة أولية للعنصر
+        document.querySelector('.container').style.opacity = '0';
+        document.querySelector('.container').style.transform = 'translateY(20px)';
+        document.querySelector('.container').style.transition = 'all 0.3s ease';
+        
+        // التحقق من نوع الجهاز
+        function checkDevice() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (!isMobile && window.innerWidth > 768) {
+                document.querySelector('.desktop-message').style.display = 'flex';
+                document.querySelector('.container').style.display = 'none';
+                document.querySelector('.watermark').style.display = 'none';
+            }
+        }
+        
+        // تشغيل التحقق عند التحميل وعند تغيير حجم النافذة
+        window.addEventListener('load', checkDevice);
+        window.addEventListener('resize', checkDevice);
+        
+        // ========== الميزات الجديدة ==========
+        
+        // 1. الوضع الليلي (Dark Mode)
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // التحقق من تفضيلات المستخدم
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+        
+        // 2. مشاركة التطبيق
+        const shareBtn = document.getElementById('shareBtn');
+        
+        shareBtn.addEventListener('click', async () => {
+            try {
+                await navigator.share({
+                    title: 'العد التنازلي لبكالوريا 2025',
+                    text: 'تطبيق يساعدك في تنظيم وقتك للتحضير لامتحان البكالوريا',
+                    url: window.location.href
+                });
+            } catch (err) {
+                // Fallback for browsers that don't support Web Share API
+                const shareUrl = `https://wa.me/?text=${encodeURIComponent('العد التنازلي لبكالوريا 2025 - تطبيق رائع للتحضير للبكالوريا: ' + window.location.href)}`;
+                window.open(shareUrl, '_blank');
+            }
+        });
+        
+        // 3. الخطة الدراسية
+        const subjectNameInput = document.getElementById('subjectName');
+        const subjectHoursInput = document.getElementById('subjectHours');
+        const addSubjectBtn = document.getElementById('addSubjectBtn');
+        const studyPlanList = document.getElementById('studyPlanList');
+        const totalSubjectsElement = document.getElementById('totalSubjects');
+        const totalHoursElement = document.getElementById('totalHours');
+        const avgHoursElement = document.getElementById('avgHours');
+        
+        function renderStudyPlan() {
+            studyPlanList.innerHTML = '';
+            
+            if (studyPlan.length === 0) {
+                studyPlanList.innerHTML = '<p style="text-align:center;color:#666;">لا توجد مواد مضافة بعد</p>';
+                totalSubjectsElement.textContent = '0';
+                totalHoursElement.textContent = '0';
+                avgHoursElement.textContent = '0';
+                return;
+            }
+            
+            let totalHours = 0;
+            
+            studyPlan.forEach((subject, index) => {
+                const subjectElement = document.createElement('div');
+                subjectElement.className = 'study-plan-item';
+                subjectElement.innerHTML = `
+                    <div class="study-plan-item-info">
+                        <div class="study-plan-item-name">${subject.name}</div>
+                        <div class="study-plan-item-hours">${subject.hours} ساعة</div>
+                    </div>
+                    <div class="study-plan-item-actions">
+                        <button class="study-plan-item-btn delete" onclick="deleteSubject(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                
+                studyPlanList.appendChild(subjectElement);
+                totalHours += parseInt(subject.hours);
+            });
+            
+            totalSubjectsElement.textContent = studyPlan.length;
+            totalHoursElement.textContent = totalHours;
+            avgHoursElement.textContent = (totalHours / studyPlan.length).toFixed(1);
+        }
+        
+        window.deleteSubject = function(index) {
+            studyPlan.splice(index, 1);
+            localStorage.setItem('studyPlan', JSON.stringify(studyPlan));
+            renderStudyPlan();
+        };
+        
+        addSubjectBtn.addEventListener('click', () => {
+            const name = subjectNameInput.value.trim();
+            const hours = subjectHoursInput.value.trim();
+            
+            if (name && hours && !isNaN(hours)) {
+                studyPlan.push({
+                    name: name,
+                    hours: hours
+                });
+                
+                localStorage.setItem('studyPlan', JSON.stringify(studyPlan));
+                
+                subjectNameInput.value = '';
+                subjectHoursInput.value = '';
+                renderStudyPlan();
+            }
+        });
+        
+        // 4. النصائح اليومية
+        const dailyTipContent = document.getElementById('dailyTipContent');
+        const refreshTipBtn = document.getElementById('refreshTipBtn');
+        
+        function getRandomTip() {
+            const randomIndex = Math.floor(Math.random() * studyTips.length);
+            return studyTips[randomIndex];
+        }
+        
+        // تحميل نصيحة عشوائية عند البدء
+        dailyTipContent.textContent = getRandomTip();
+        
+        refreshTipBtn.addEventListener('click', () => {
+            dailyTipContent.textContent = getRandomTip();
+        });
+        
+        // 5. مواضيع البكالوريا السابقة
+        function openBacSubjects(year) {
+            let url = 'https://www.dzexams.com/ar/bac';
+            switch(year) {
+                case '2014':
+                    url = 'https://www.dzexams.com/ar/bac/2014';
+                    break;
+                case '2020':
+                    url = 'https://www.dzexams.com/ar/bac/2020';
+                    break;
+                case '2024':
+                    url = 'https://www.dzexams.com/ar/bac/2024';
+                    break;
+            }
+            window.open(url, '_blank');
+        }
+        
+        // 6. وظائف العناصر الإضافية
+        function showStudyPlan() {
+            document.querySelector('.study-plan-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showTimeManagementTips() {
+            const randomTip = timeManagementTips[Math.floor(Math.random() * timeManagementTips.length)];
+            dailyTipContent.textContent = randomTip;
+            document.querySelector('.tips-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showUnderstandingTips() {
+            const randomTip = understandingTips[Math.floor(Math.random() * understandingTips.length)];
+            dailyTipContent.textContent = randomTip;
+            document.querySelector('.tips-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showProgressTips() {
+            const randomTip = progressTips[Math.floor(Math.random() * progressTips.length)];
+            dailyTipContent.textContent = randomTip;
+            document.querySelector('.tips-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // تهيئة الخطة الدراسية عند التحميل
+        renderStudyPlan();
+    </script>
+</body>
+</html>
